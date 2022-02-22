@@ -1,0 +1,28 @@
+{
+  "name": "file-upload-api",
+  "version": "1.0.0",
+  "description": "A NodeJS API to upload files from MongoDB",
+  "main": "src/server.js",
+  "scripts": {
+    "start":"nodemon main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "upload",
+    "multiple",
+    "files",
+    "images",
+    "mongodb"
+  ],
+  "author": "Arya Saumitra (aryasaumitra@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.0",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2",
+    "nodemon": "^2.0.15"
+  }
+}
