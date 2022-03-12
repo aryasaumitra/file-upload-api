@@ -4,7 +4,7 @@
   "description": "A NodeJS API to upload files from MongoDB",
   "main": "src/server.js",
   "scripts": {
-    "start":"nodemon main",
+    "start": "nodemon main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -20,7 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "mongodb": "^4.4.0",
+    "mongodb": "^4.4.1",
     "multer": "^1.4.4",
     "multer-gridfs-storage": "^5.0.2",
     "nodemon": "^2.0.15"
