@@ -4,28 +4,40 @@ const MongoClient = require("mongodb").MongoClient;
 const GridFSBucket = require("mongodb").GridFSBucket;
 
 const url = dbConfig.url;
-const baseUrl = "http://localhost:8080/files"
+const baseUrl = "http://localhost:8080/files/"
 const mongoClient  = new MongoClient(url)
 
 
 const uploadFiles = async (req,res) => {
     try{
         await upload(req,res);
-        console.log(req.file)
-        if(req.file == undefined){
-            return res.send({
-                message:"You must select a file"
-            })
-        }
+        console.log(req.files)
+        if(req.files.length <= 0){
 
+            return res.status(400).send({message:"You must select one file atleast"})
+        }
         return res.send({
-            message:"File has been uploaded"
+            message:"Files has been uploaded"
         })
+        // if(req.file == undefined){
+        //     return res.send({
+        //         message:"You must select a file"
+        //     })
+        // }
+
+
 
     }catch(error){
         console.log(error)
+        if(error.code === "LIMIT_UNEXPECTED_FILE"){
+            return res.status(400).send({
+                message:"Too many files to upload"
+            });
+        }
+
+
         return res.send({
-            message:`Error when uploading file:${error}`
+            message:`Error when uploading too many file:${error}`
         })
     }
 }

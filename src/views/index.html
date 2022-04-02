@@ -20,7 +20,7 @@
                 <h4>Node.js Upload Images - Bezdoker.com</h4>
                 <form action="/upload" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" name="file" id="input-files" class="form-control-file-border">
+                        <input type="file" name="file" id="input-files" class="form-control-file-border" multiple>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -63,8 +63,6 @@
 
             let inputFiles = document.getElementById('input-files')
             inputFiles.addEventListener("change",()=>{
-                // console.log('hellllo')
-                // console.log(this)
                 imagesPreview(inputFiles.files,"preview-images")
             })
 
